@@ -9,6 +9,7 @@ import (
 	"github.com/rs/zerolog/hlog"
 	"github.com/rs/zerolog/log"
 	"github.com/tymcgee/go-starter/config"
+	"github.com/tymcgee/go-starter/handler"
 	"github.com/tymcgee/go-starter/middleware"
 )
 
@@ -34,7 +35,7 @@ func setupRouter() *chi.Mux {
 	h := Handler{}
 	r.Route("/api", func(r chi.Router) {
 		r.Route("/v1", func(r chi.Router) {
-			r.Get("/health", h.health)
+			r.Get("/health", h.Health)
 		})
 	})
 	return r
