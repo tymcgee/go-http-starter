@@ -1,6 +1,7 @@
 package main
 
 import (
+	"database/sql"
 	"net/http"
 	"time"
 
@@ -13,7 +14,7 @@ import (
 	"github.com/tymcgee/go-starter/middleware"
 )
 
-func setupRouter() *chi.Mux {
+func setupRouter(db *sql.DB) *chi.Mux {
 	r := chi.NewRouter()
 	r.Use(hlog.NewHandler(log.Logger))
 	r.Use(hlog.AccessHandler(func(r *http.Request, status, size int, duration time.Duration) {
@@ -32,10 +33,11 @@ func setupRouter() *chi.Mux {
 		r.Use(middleware.Recoverer)
 	}
 
-	h := Handler{}
+	h := handler.Handler{DB: db}
 	r.Route("/api", func(r chi.Router) {
 		r.Route("/v1", func(r chi.Router) {
 			r.Get("/health", h.Health)
+			r.Get("/books", h.GetBooks)
 		})
 	})
 	return r

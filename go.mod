@@ -5,7 +5,9 @@ go 1.22.1
 require (
 	github.com/caarlos0/env/v10 v10.0.0
 	github.com/go-chi/chi/v5 v5.0.12
+	github.com/guregu/null/v5 v5.0.0
 	github.com/joho/godotenv v1.5.1
+	github.com/mattn/go-sqlite3 v1.14.22
 	github.com/rs/zerolog v1.32.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 )

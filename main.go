@@ -13,8 +13,13 @@ func main() {
 	if err := config.ParseConfig(); err != nil {
 		log.Fatal().Msg("Failed to load configuration")
 	}
+	db, err := SetupDB()
+	if err != nil {
+		log.Fatal().Err(err).Msg("Failed to connect to database")
+	}
+
 	setupLogger()
-	r := setupRouter()
+	r := setupRouter(db)
 	port := fmt.Sprintf(":%v", config.Config.Port)
 	log.Info().Msgf("Listening on %v", port)
 	log.Fatal().Err(http.ListenAndServe(port, r)).Send()
