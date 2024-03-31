@@ -7,7 +7,7 @@ import (
 	"github.com/tymcgee/go-starter/dao"
 )
 
-func (h *Handler) GetBooks(w http.ResponseWriter, r *http.Request) {
+func (h Handler) GetBooks(w http.ResponseWriter, r *http.Request) {
 	log := hlog.FromRequest(r)
 	q := dao.New(h.DB)
 
