@@ -10,6 +10,8 @@ import (
 )
 
 func main() {
+	setupLogger()
+
 	if err := config.ParseConfig(); err != nil {
 		log.Fatal().Msg("Failed to load configuration")
 	}
@@ -18,7 +20,6 @@ func main() {
 		log.Fatal().Err(err).Msg("Failed to connect to database")
 	}
 
-	setupLogger()
 	r := setupRouter(db)
 	port := fmt.Sprintf(":%v", config.Config.Port)
 	log.Info().Msgf("Listening on %v", port)
