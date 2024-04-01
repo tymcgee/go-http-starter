@@ -15,7 +15,7 @@ func main() {
 	if err := config.ParseConfig(); err != nil {
 		log.Fatal().Msg("Failed to load configuration")
 	}
-	db, err := SetupDB()
+	db, err := setupDB()
 	if err != nil {
 		log.Fatal().Err(err).Msg("Failed to connect to database")
 	}
