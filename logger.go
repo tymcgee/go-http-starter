@@ -13,10 +13,9 @@ import (
 func setupLogger() {
 	file := &lumberjack.Logger{
 		Filename:   config.Config.LogFile,
-		MaxSize:    500, // megabytes
-		MaxBackups: 3,
-		MaxAge:     28,    // days
-		Compress:   false, // disabled by default
+		MaxSize:    config.Config.LogMaxSizeMB,
+		MaxBackups: config.Config.LogMaxBackups,
+		MaxAge:     config.Config.LogMaxAgeDays,
 	}
 
 	// show the pretty logs to stdout, only show the structured logs to the log file
