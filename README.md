@@ -59,5 +59,8 @@ If you don't need a database, you can pretty easily remove `sqlc` and `golang-mi
 
 For the sake of simplicity I'm just using a `sqlite3` database here, so if you want to switch databases you'll have to get a different database driver and probably add in some configuration (host/port/user/pass/schema...) to connect to it, as well as possibly changing some configuration values in `sqlc.yml`.
 
+# License
+[The Unlicense](https://github.com/tymcgee/go-http-starter/blob/main/LICENSE)
+
 ## Makefile
 I've included a `Makefile` which contains some common commands for dealing with the program's lifecycle. Most of what's in there right now has to do with database stuff.
