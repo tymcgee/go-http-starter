@@ -18,8 +18,8 @@ apply-migration:
 generate:
 	sqlc generate
 
-.PHONY: install
-install:
+.PHONY: setup
+setup:
 	go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest
 # add whatever database drivers you want here
 	go install -tags 'sqlite,mysql,postgres,pgx5' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
