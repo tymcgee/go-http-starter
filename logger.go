@@ -6,7 +6,7 @@ import (
 
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
-	"github.com/tymcgee/go-starter/config"
+	"github.com/tymcgee/go-http-starter/config"
 	"gopkg.in/natefinch/lumberjack.v2"
 )
 

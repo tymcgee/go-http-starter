@@ -1,4 +1,4 @@
-module github.com/tymcgee/go-starter
+module github.com/tymcgee/go-http-starter
 
 go 1.22.1
 

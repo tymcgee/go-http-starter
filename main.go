@@ -6,7 +6,7 @@ import (
 
 	_ "github.com/joho/godotenv/autoload"
 	"github.com/rs/zerolog/log"
-	"github.com/tymcgee/go-starter/config"
+	"github.com/tymcgee/go-http-starter/config"
 )
 
 func main() {

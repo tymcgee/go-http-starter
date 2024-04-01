@@ -9,9 +9,9 @@ import (
 	chiMiddleware "github.com/go-chi/chi/v5/middleware"
 	"github.com/rs/zerolog/hlog"
 	"github.com/rs/zerolog/log"
-	"github.com/tymcgee/go-starter/config"
-	"github.com/tymcgee/go-starter/handler"
-	"github.com/tymcgee/go-starter/middleware"
+	"github.com/tymcgee/go-http-starter/config"
+	"github.com/tymcgee/go-http-starter/handler"
+	"github.com/tymcgee/go-http-starter/middleware"
 )
 
 func setupRouter(db *sql.DB) *chi.Mux {

@@ -4,7 +4,7 @@ import (
 	"net/http"
 
 	"github.com/rs/zerolog/hlog"
-	"github.com/tymcgee/go-starter/dao"
+	"github.com/tymcgee/go-http-starter/dao"
 )
 
 func (h Handler) GetBooks(w http.ResponseWriter, r *http.Request) {
